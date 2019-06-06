@@ -1,0 +1,56 @@
+$width: 250px;
+$height: 500px;
+$color: #333;
+$highlight: #ccc;
+
+div.image-carousel {
+  display: grid;
+  grid-template-rows: $height 1fr 1fr;
+  justify-content: center;
+  max-width: $width;
+  margin: 25px auto;
+
+  > div {
+    background-color: $color;
+    width: $width;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  > ul {
+    list-style: none;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+
+    > li {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      background-color: $color;
+      margin: 0px 5px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    > li.active {
+      background-color: $highlight;
+    }
+
+    > li:hover {
+      opacity: 0.5;
+    }
+  }
+
+  > div:last-child {
+    background-color: #ffffff;
+
+    > div {
+      display: inline-block;
+      text-transform: capitalize;
+      margin: 0px 5px;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
